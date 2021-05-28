@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "module": "esNext",
+    "moduleResolution": "node",
+    "preserveConstEnums": true,
+    "strict": false,
+    "strictFunctionTypes": false,
+    "target": "es5",
+    "sourceMap": true,
+    "inlineSources": true,
+    "importHelpers": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "downlevelIteration": true,
+    "typeRoots": ["./node_modules/@types", "./types"]
+  }
+}
