@@ -1,0 +1,22 @@
+{
+  "name": "flowable-addon-mysuite-example",
+  "homepage": "https://.github.io/flowable-addon-mysuite",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@flowable/flowable-forms-mysuite": "link:..",
+    "@flowable/forms": "^3.3.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "^1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:8889"
+}

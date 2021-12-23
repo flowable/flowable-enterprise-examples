@@ -1,0 +1,158 @@
+{
+  "Palette-Id": "flowable-mysuite",
+  "patchPalettes": [
+    "flowable-form-palette"
+  ],
+  "resourceBundles": [
+    "com/flowable/addons/palette/i18n/mysuite-translation",
+    "com/flowable/addons/palette/i18n/mysuite-translation"
+  ],
+  "groups": {
+    "flowable-mysuite-components": {
+      "index": 999
+    }
+  },
+  "stencils": [
+    {
+      "id": "mysuite-base",
+      "superId": "base-image",
+      "xmlTag": "mysuiteProgressBar",
+      "groups": [
+        "flowable-mysuite-components"
+      ],
+      "properties": [
+        {
+          "id": "label",
+          "visible": false
+        },
+        {
+          "id": "label-position",
+          "visible": false
+        },
+        {
+          "id": "description",
+          "visible": false
+        },
+        {
+          "id": "max-height",
+          "visible": false
+        },
+        {
+          "id": "value",
+          "title": "property.value.title"
+        },
+        {
+          "id": "refresh-time",
+          "visible": false
+        },
+        {
+          "id": "link-url",
+          "visible": false
+        },
+        {
+          "id": "link-target",
+          "visible": false
+        }
+      ]
+    },
+    {
+      "id": "mysuite-hello-forms",
+      "superId": "mysuite-base",
+      "xmlTag": "mysuiteHelloForms",
+      "icon": "component-presentations/flowable-forms-mysuite/palette-icons/hello-forms.svg",
+      "bigIcon": "component-presentations/flowable-forms-mysuite/palette-icons/hello-forms.svg",
+      "viewPath": "component-presentations/editor-views/hello-forms.svg",
+      "properties": [
+        {
+          "id": "value",
+          "visible": false
+        }
+      ]
+    },
+    {
+      "id": "mysuite-progress-bar",
+      "superId": "mysuite-base",
+      "xmlTag": "mysuiteProgressBar",
+      "icon": "component-presentations/flowable-forms-mysuite/palette-icons/progress-bar.svg",
+      "bigIcon": "component-presentations/flowable-forms-mysuite/palette-icons/progress-bar.svg",
+      "viewPath": "component-presentations/editor-views/progress-bar.svg",
+      "properties": [
+        {
+          "id": "max",
+          "path": "extraSettings.max",
+          "category": "edoras",
+          "type": "Integer",
+          "runtime": true
+        }
+      ]
+    },
+    {
+      "id": "mysuite-progress-bar-input",
+      "superId": "mysuite-base",
+      "xmlTag": "mysuiteProgressBarInput",
+      "icon": "component-presentations/flowable-forms-mysuite/palette-icons/progress-bar.svg",
+      "bigIcon": "component-presentations/flowable-forms-mysuite/palette-icons/progress-bar.svg",
+      "viewPath": "component-presentations/editor-views/progress-bar.svg",
+      "properties": [
+        {
+          "id": "max",
+          "path": "extraSettings.max",
+          "category": "edoras",
+          "type": "Integer",
+          "runtime": true
+        },
+        {
+          "id": "default-value",
+          "type": "TextExpressionEditor",
+          "category": "common",
+          "path": "defaultValue",
+          "index": 5,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "mysuite-emoji-picker",
+      "superId": "mysuite-base",
+      "xmlTag": "mysuiteEmojiPicker",
+      "icon": "component-presentations/flowable-forms-mysuite/palette-icons/emoji.svg",
+      "bigIcon": "component-presentations/flowable-forms-mysuite/palette-icons/emoji.svg",
+      "viewPath": "component-presentations/editor-views/emoji.svg",
+      "properties": [
+        {
+          "id": "default-value",
+          "type": "TextExpressionEditor",
+          "category": "common",
+          "path": "defaultValue",
+          "index": 5,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "mysuite-panel-composition",
+      "superId": "mysuite-base",
+      "xmlTag": "mysuitePanelComposition",
+      "icon": "component-presentations/flowable-forms-mysuite/palette-icons/box.svg",
+      "bigIcon": "component-presentations/flowable-forms-mysuite/palette-icons/box.svg",
+      "viewPath": "component-presentations/editor-views/panel-composition.svg"
+    },
+    {
+      "id": "mysuite-custom-table",
+      "superId": "mysuite-base",
+      "xmlTag": "mysuiteCustomTable",
+      "icon": "./app/palette-icons?id=component-presentations/palette-icons/table.svg",
+      "bigIcon": "./app/palette-icons?id=component-presentations/palette-icons/table.svg",
+      "viewPath": "component-presentations/editor-views/table.svg",
+      "properties": [
+        {
+          "id": "value",
+          "visible": false
+        }
+      ]
+    }
+  ],
+  "removestencils": [
+    "mysuite-base"
+  ]
+}

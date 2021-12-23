@@ -1,0 +1,52 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:oryx="http://www.b3mn.org/oryx"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+
+   width="300"
+   height="50"
+   version="1.0">
+	<g oryx:minimumSize="24 26">
+		<defs>   
+		   <radialGradient id="transparent" cx="10%" cy="10%" r="100%" fx="10%" fy="10%">
+				<stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+				<stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+		   </radialGradient>	   
+			<marker id="table_marker" markerWidth="1" markerHeight="24" orient="auto">								
+				<path d="M0,0 0,23" stroke="black" fill="black" oryx:anchors="left top"/>
+			</marker>		   
+	  	</defs>
+	  	<rect id="bg_frame" oryx:anchors="left top" x="0" y="0" width="150" height="26" stroke="none" fill="url(#transparent)" />
+
+		<g id="a">
+			<rect id="label" oryx:anchors="left top" x="0" y="0" width="100" height="24" stroke="none" fill="url(#transparent)" />
+			<text id="label_text" oryx:anchors="left top" font-size="11" x="0" y="9"  oryx:align="middle left" stroke="black"></text>
+		</g>		
+
+		<g id="b">						
+			<rect id="input" oryx:anchors="left top" fill="#F5F5F5" x="120" y="0" height="24" width="150"/>
+			<text id="input_text" oryx:anchors="left top" oryx:align="middle left" halign="center" valign="middle" font-size="11" x="120" y="9" refX="0" refY="0" stroke="black" fill="gray" font-style="italic" display="none"></text>
+
+			<path id="input_dependent_1"  oryx:anchors="left top" stroke="none" fill="#ffffff" d="M125,0 L137,0" refX="5" refY="5" marker-start="url(#table_marker)" style="opacity:0.9999;"/>
+			<text id="input_dependent_text_1" oryx:anchors="left top" oryx:align="middle center" font-size="12" x="82" y="15" refX="159" refY="10" stroke="black">Column 1 | Column 2 | Column 3 | Column 4 | Column 5 |</text>
+		</g>		
+		
+		<g id="c" transform="translate(1,8)">
+			<path id="mandatory_Indicator" oryx:anchors="middle left" d='m14.30275,11.94655l-2.49912,0l-0.77223,2.37422l-0.77227,-2.37422l-2.49912,0l2.02183,-1.46721l-0.77229,-2.37417l2.02184,1.46732l2.02183,-1.46732l-0.77232,2.37417l2.02184,1.46721z' stroke="#ff0000" fill="#ff0000" display="none"/>
+		</g>
+
+		<g id="d">
+			<path id="feedback_Indicator"  oryx:anchors="left top" d='M300,15 320,15 310,0 Z M310 4 L310 10 Z M310 11 L310 13 Z' stroke="black" fill="#ff0000" display="none"/>
+		</g>
+		
+		<g id="e">
+			<rect id="desc" oryx:anchors="left top" stroke="none" fill="url(#transparent)" x="120" y="0" height="24" width="150" display="none"/>
+			<text id="desc_text" oryx:anchors="left top" oryx:align="middle left" font-size="11" x="120" y="9" stroke="black" fill="gray" font-style="italic" display="none"></text>
+		</g>
+		
+	</g>
+</svg>
