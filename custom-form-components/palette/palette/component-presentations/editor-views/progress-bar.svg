@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:oryx="http://www.b3mn.org/oryx"
+  xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="24" version="1.0">
+  <g oryx:minimumSize="20 26">
+    <defs>
+      <radialGradient id="transparent" cx="10%" cy="10%" r="100%" fx="10%" fy="10%">
+        <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+        <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="progress" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="30%" style="stop-color:rgb(200,200,200);stop-opacity:1" />
+        <stop offset="30.00000001%" style="stop-color:rgb(255,255,255);stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <rect id="bg_frame" oryx:anchors="left top" x="0" y="0" width="150" height="24" stroke="none" fill="url(#transparent)" />
+    <g id="c">
+      <rect id="input" oryx:anchors="left top" stroke-width="1" fill="url(#progress)" x="0" y="0" height="24" width="150" />
+      <text id="input_text" oryx:anchors="left top" font-size="11" x="0" y="9" oryx:align="middle left" valign="middle" stroke="black"/>
+    </g>
+  </g>
+</svg>

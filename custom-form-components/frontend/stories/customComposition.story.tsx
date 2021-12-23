@@ -1,0 +1,20 @@
+import * as React from "react";
+
+import { storiesOf } from "@storybook/react";
+
+import components from "../src";
+import { Form, _ } from "@flowable/forms";
+
+const formProps = {
+  debug: true,
+  Components: components as any,
+};
+
+storiesOf("Custom Composition", module).add("Basic", () => (
+  <Form
+    {...formProps}
+    config={_.sfs.parse(`
+      mysuiteCustomComposition: value={{composition}}
+    `)}
+  />
+));

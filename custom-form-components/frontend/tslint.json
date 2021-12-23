@@ -1,0 +1,27 @@
+{
+  "extends": ["tslint:latest", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": ["node_modules/**", "dist*/**", "vendor/**"]
+  },
+  "rules": {
+    "array-type": [true, "array"],
+    "cyclomatic-complexity": true,
+    "indent": [true, "spaces", 2],
+    "interface-name": false,
+    "interface-over-type-literal": false,
+    "jsdoc-format": false,
+    "max-classes-per-file": false,
+    "member-access": false,
+    "member-ordering": false,
+    "no-console": [true, "log", "info", "debug", "trace"],
+    "no-empty": false,
+    "no-implicit-dependencies": false,
+    "no-submodule-imports": [true, "@flw", "@vendor", "rxjs", "date-fns", "ajv", "@flowable"],
+    "no-unused-expression": [true, "allow-fast-null-checks"],
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "prefer-object-spread": false,
+    "radix": false,
+    "variable-name": false
+  }
+}

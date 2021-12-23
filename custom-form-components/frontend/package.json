@@ -1,0 +1,93 @@
+{
+  "name": "@flowable/forms-mysuite",
+  "version": "1.3.25",
+  "description": "Custom components for flowable forms example",
+  "author": "",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "repository": "https://repo.edorasware.com/api/npm/edoras-npm-repo/@flowable/flowable-addon-mysuite",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "scripts": {
+    "test": "cross-env CI=1 react-scripts-ts test --env=jsdom",
+    "test:watch": "react-scripts-ts test --env=jsdom",
+    "build": "rollup -c --environment production",
+    "start": "rollup -c -w",
+    "prepare": "yarn run build",
+    "predeploy": "cd example && yarn install && yarn run build",
+    "deploy": "gh-pages -d example/build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "build-webpack": "webpack -p --config webpack.conf.js",
+    "bump": "node newversion.js"
+  },
+  "peerDependencies": {
+    "@flowable/forms": "^3.1.4",
+    "momentjs": "^2.0.0",
+    "react": "^15.0.0 || ^16.0.0",
+    "react-dom": "^15.0.0 || ^16.0.0"
+  },
+  "devDependencies": {
+    "@flowable/forms": "^3.3.4",
+    "@storybook/react": "^4.0.4",
+    "@svgr/rollup": "^5.5.0",
+    "@types/jest": "^24.0.23",
+    "@types/react": "^16.9.13",
+    "@types/react-dom": "^16.9.4",
+    "@types/react-measure": "^2.0.4",
+    "@types/react-table": "^6.8.5",
+    "@types/recharts": "^1.8.3",
+    "@types/storybook__react": "^4.0.1",
+    "awesome-typescript-loader": "^5.2.1",
+    "cross-env": "^5.1.4",
+    "css-loader": "^2.1.0",
+    "gh-pages": "^2.1.1",
+    "http-proxy-middleware": "^0.19.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "momentjs": "^2.0.0",
+    "node-sass": "^4.13.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts-ts": "^3.1.0",
+    "rollup": "^2.33.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-filesize": "^9.0.2",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-postcss": "^3.1.8",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "rollup-plugin-url": "^3.0.1",
+    "sass-loader": "^7.1.0",
+    "semver": "^6.3.0",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.2.1",
+    "tslint": "^5.20.1",
+    "tslint-react": "^4.1.0",
+    "typescript": "^3.8.3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@rollup/plugin-alias": "^3.1.1",
+    "@types/draft-js": "^0.10.37",
+    "@types/emoji-mart": "^3.0.4",
+    "emoji-mart": "^3.0.0",
+    "prop-types": "^15.5.4",
+    "react-measure": "^2.3.0",
+    "react-waypoint": "^9.0.2",
+    "recharts": "^1.8.5",
+    "sortablejs": "^1.10.0"
+  },
+  "publishConfig": {
+    "registry": "https://repo.edorasware.com/api/npm/edoras-npm-repo"
+  }
+}
