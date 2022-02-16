@@ -1,0 +1,28 @@
+[
+  {
+    "key": "all",
+    "labelKey": "contacts.filter.all",
+    "defaultLabel": "All",
+    "parameters": {}
+  },
+  {
+    "key": "active",
+    "labelKey": "contacts.filter.active",
+    "defaultLabel": "Active",
+    "parameters": {
+      "must" : {
+        "state": "ACTIVE"
+      }
+    }
+  },
+  {
+    "key": "inactive",
+    "labelKey": "contacts.filter.inactive",
+    "defaultLabel": "Inactive",
+    "parameters": {
+      "must" : {
+        "state": "INACTIVE"
+      }
+    }
+  }
+]

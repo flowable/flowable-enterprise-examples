@@ -1,0 +1,81 @@
+{
+  "Palette-Id": "demo-palette-extension",
+  "title": "Demo Palette Extension",
+  "patchPalettes": ["flowable-process-palette", "flowable-case-palette"],
+  "resourceBundles": ["com/flowable/config/custom/palette/translation"],
+  "groups": {
+    "math": {
+      "index": 10
+    }
+  },
+  "stencils": [
+    {
+      "id": "AdditionServiceTask",
+      "superId": "ServiceTask",
+      "groups": [
+        "math"
+      ],
+      "icon": "../palette-icons?id=component-presentations/palette-icons/add.png",
+      "bigIcon": "../palette-icons?id=component-presentations/palette-icons/add.svg",
+      "properties": [
+        {
+          "id": "input-a",
+          "category": "edoras",
+          "type": "SimpleTextExpression",
+          "index": 10,
+          "optional": false
+        },
+        {
+          "id": "input-b",
+          "category": "edoras",
+          "type": "SimpleTextExpression",
+          "index": 20,
+          "optional": false
+        },
+        {
+          "id": "output",
+          "category": "edoras",
+          "type": "SimpleText",
+          "optional": false,
+          "index": 30,
+          "variableExtractor": {
+            "type": "simple"
+          }
+        },
+        {
+          "id": "delegateexpression",
+          "value": "${mathAPlusB}",
+          "visible": false
+        },
+        {
+          "id": "expression",
+          "visible": false
+        },
+        {
+          "id": "classfields",
+          "visible": false
+        },
+        {
+          "id": "class",
+          "visible": false
+        },
+        {
+          "id": "servicetasktriggerable",
+          "visible": false
+        },
+        {
+          "id": "resultvariable",
+          "visible": false
+        },
+        {
+          "id": "includeinhistory",
+          "visible": false
+        },
+        {
+          "id": "servicetaskUseLocalScopeForResultVariable",
+          "visible": false
+        }
+      ]
+    }
+  ]
+}
