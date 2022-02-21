@@ -1,0 +1,157 @@
+[
+  {
+    "key": "admin-flowable",
+    "name": "Flowable Administration User",
+    "description": "Creates Flowable administration user.",
+    "initialUserSubType": "admin",
+    "initialState": "ACTIVE",
+    "initialSubState": "ACTIVE",
+    "forms": {
+      "init": "F01_userInitFormDefault",
+      "view": "F02_userViewFormDefault",
+      "edit": "F03_userEditFormDefault"
+    },
+    "memberGroups": [
+      "flowableUser",
+      "flowableAdministrator",
+      "paletteUser",
+      "paletteAdministrator"
+    ],
+    "lookupGroups":[
+      "paletteUser"
+    ],
+    "actionPermissions": {
+      "create": [ "flowableAdministrator"],
+      "edit": [ "flowableAdministrator" ],
+      "deactivate": [ "flowableAdministrator" ],
+      "activate": [ "flowableAdministrator" ]
+    },
+    "initialVariables": {
+      "adminUser": true,
+      "description": "Admin"
+    },
+    "conversationFilters": [ "all" ],
+    "contactFilters": [ "all", "active", "inactive" ],
+    "allowedFeatures": [
+      "contacts",
+      "editContactAvatar",
+      "changeOwnPassword",
+      "createUser",
+      "impersonateUser",
+      "changeContactPassword",
+      "user-mgmt",
+      "work",
+      "createWork",
+      "reports",
+      "reportsMetrics",
+      "tasks",
+      "templateManagement",
+      "themeManagement",
+      "editContactAvatar",
+      "registerDevice",
+      "documents",
+      "lastReadAvatars",
+      "compliance",
+      "search-api",
+      "workobject-api",
+
+      "actuators"
+    ]
+  },
+
+  {
+    "key": "admin-palette",
+    "name": "Flowable Palette Administration User",
+    "description": "Creates a new Palette Administration user.",
+    "initialUserSubType": "admin",
+    "initialState": "ACTIVE",
+    "initialSubState": "ACTIVE",
+    "forms": {
+      "init": "F01_userInitFormDefault",
+      "view": "F02_userViewFormDefault",
+      "edit": "F03_userEditFormDefault"
+    },
+    "memberGroups": [
+      "flowableUser",
+      "flowableAdministrator",
+      "paletteUser",
+      "paletteAdministrator"
+    ],
+    "lookupGroups":[
+      "paletteUser"
+    ],
+    "actionPermissions": {
+      "create": [ "paletteAdministrator"],
+      "edit": [ "paletteAdministrator" ],
+      "deactivate": [ "paletteAdministrator" ],
+      "activate": [ "paletteAdministrator" ]
+    },
+    "initialVariables": {
+      "adminUser": true,
+      "description": "Admin"
+    },
+    "conversationFilters": [ "all" ],
+    "contactFilters": [ "all", "active", "inactive" ],
+    "allowedFeatures": [
+      "contacts",
+      "editContactAvatar",
+      "changeOwnPassword",
+      "createUser",
+      "impersonateUser",
+      "changeContactPassword",
+      "user-mgmt",
+      "work",
+      "createWork",
+      "reports",
+      "reportsMetrics",
+      "tasks",
+      "templateManagement",
+      "themeManagement",
+      "editContactAvatar",
+      "registerDevice",
+      "documents",
+      "lastReadAvatars",
+      "compliance",
+      "search-api",
+      "workobject-api",
+
+      "actuators"
+    ]
+  },
+
+  {
+    "key": "user-palette",
+    "name": "Flowable Palette User",
+    "description": "Creates a new, non-specific user where the member groups can be freely chosen.",
+    "initialState": "ACTIVE",
+    "initialSubState": "ACTIVE",
+    "forms": {
+      "init": "F01_userInitFormDefault",
+      "view": "F02_userViewFormDefault",
+      "edit": "F03_userEditFormDefault"
+    },
+    "memberGroups": [
+      "flowableUser",
+      "paletteUser"
+    ],
+    "lookupGroups":[
+      "paletteUser"
+    ],
+    "actionPermissions": {
+      "create": [ "paletteAdministrator" ],
+      "edit": [ "paletteAdministrator" ],
+      "deactivate": [ "paletteAdministrator" ],
+      "activate": [ "paletteAdministrator" ]
+    },
+    "contactFilters": [ "active" ],
+    "allowedFeatures": [
+      "contacts",
+      "editContactAvatar",
+      "changeOwnPassword",
+      "work",
+      "createWork",
+      "cases",
+      "tasks"
+    ]
+  }
+]

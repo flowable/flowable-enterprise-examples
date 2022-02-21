@@ -1,0 +1,51 @@
+{
+  "name": "Flowable Palette",
+  "tenantKey": "flowablePalette",
+  "groups": [
+    {
+      "key": "flowableAdministrator",
+      "name": "Flowable Administrator"
+    },
+    {
+      "key": "flowableUser",
+      "name": "Flowable Flowable User"
+    },
+    {
+      "key": "paletteAdministrator",
+      "name": "Flowable Palette Administrator"
+    },
+    {
+      "key": "paletteUser",
+      "name": "Flowable Palette User"
+    }
+  ],
+  "users": [
+    {
+      "firstName": "Flowable",
+      "lastName": "Admin",
+      "login": "admin",
+      "email": "admin@palette.flowable.com",
+      "language": "en",
+      "theme": "flowable",
+      "userDefinitionKey": "admin-flowable"
+    },
+    {
+      "firstName": "Palette",
+      "lastName": "Admin",
+      "login": "palette.admin",
+      "email": "palette.admin@palette.flowable.com",
+      "language": "en",
+      "theme": "flowable",
+      "userDefinitionKey": "admin-palette"
+    },
+    {
+      "firstName": "Palette",
+      "lastName": "User",
+      "login": "palette.user",
+      "email": "palette.user@palette.flowable.com",
+      "language": "en",
+      "theme": "flowable",
+      "userDefinitionKey": "user-palette"
+    }
+  ]
+}
