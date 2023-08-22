@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {mergeMap, map} from "rxjs/operators";
+import {HttpClient} from '@angular/common/http';
+import {mergeMap, map} from 'rxjs/operators';
 import {Model} from '@flowable/forms';
-import {combineLatest} from "rxjs";
+import {combineLatest} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -25,20 +25,20 @@ export class AppComponent implements OnInit {
       }
     };
     const processDefinitionIdObservable = this.httpClient.get<any>('/process-api/repository/process-definitions?key=integrateForms&latest=true', options)
-      .pipe(
+      .pipe<any>(
         map(result => result.data[0].id)
       );
 
     combineLatest([
-      processDefinitionIdObservable.pipe(
+      processDefinitionIdObservable.pipe<Model.FormLayout>(
         mergeMap(processDefinitionId => this.httpClient.get<Model.FormLayout>(`/platform-api/process-definitions/${processDefinitionId}/start-form`, options))
       ),
       processDefinitionIdObservable
     ])
       .subscribe(([formLayout, processDefinitionId]) => {
         formLayout.outcomes = formLayout.outcomes || [{
-          label: "Create new process",
-          value: "__CREATE"
+          label: 'Create new process',
+          value: '__CREATE'
         }];
         this.props = {
           config: formLayout,
@@ -48,11 +48,11 @@ export class AppComponent implements OnInit {
               outcome: result,
               processDefinitionId
             }, options)
-              .subscribe(result => {
+              .subscribe(creationResult => {
                 // handle successful creation
               });
           }
-        }
+        };
       });
   }
 
