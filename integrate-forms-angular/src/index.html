@@ -8,6 +8,9 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <script>
     const global = globalThis;
+    window.flowable = window.flowable || {};
+    window.flowable.endpoints = window.flowable.endpoints | {};
+    window.flowable.endpoints.baseUrl = "http://localhost:8080";
   </script>
 </head>
 <body>
