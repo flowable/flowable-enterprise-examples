@@ -19,19 +19,20 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const options = {
+    const processDefinitionKey = 'integrateForms';
+    const httpOptionsWithUserCredentials = {
       headers: {
         Authorization: 'Basic YWRtaW46dGVzdA=='
       }
     };
-    const processDefinitionIdObservable = this.httpClient.get<any>('/process-api/repository/process-definitions?key=integrateForms&latest=true', options)
+    const processDefinitionIdObservable = this.httpClient.get<any>(`/process-api/repository/process-definitions?key=${processDefinitionKey}&latest=true`, httpOptionsWithUserCredentials)
       .pipe<any>(
         map(result => result.data[0].id)
       );
 
     combineLatest([
       processDefinitionIdObservable.pipe<Model.FormLayout>(
-        mergeMap(processDefinitionId => this.httpClient.get<Model.FormLayout>(`/platform-api/process-definitions/${processDefinitionId}/start-form`, options))
+        mergeMap(processDefinitionId => this.httpClient.get<Model.FormLayout>(`/platform-api/process-definitions/${processDefinitionId}/start-form`, httpOptionsWithUserCredentials))
       ),
       processDefinitionIdObservable
     ])
@@ -47,9 +48,9 @@ export class AppComponent implements OnInit {
               ...payload,
               outcome: result,
               processDefinitionId
-            }, options)
+            }, httpOptionsWithUserCredentials)
               .subscribe(creationResult => {
-                // handle successful creation
+                // handle successful creation and store creationResult.id to have the id of the created process
               });
           }
         };
