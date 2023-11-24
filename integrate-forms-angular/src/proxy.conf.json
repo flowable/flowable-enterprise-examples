@@ -1,9 +1,73 @@
 {
+  "/idm-api": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
   "/process-api": {
     "target": "http://localhost:8080",
     "secure": false
   },
   "/platform-api": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/form-api": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/auth": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/action-api": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/cmmn-api": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/dmn-api": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/dataobject-api": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/app-api": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/event-registry-api": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/external-job-api": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/content-api": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/analytics-api": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/work-api": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/service-registry-api": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/template-api": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/inspect-api": {
     "target": "http://localhost:8080",
     "secure": false
   }

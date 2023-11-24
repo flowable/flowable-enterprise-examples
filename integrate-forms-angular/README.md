@@ -14,6 +14,8 @@ For further explanation please refer to the How-To.
 To run the project, you need to start Flowable Work on port 8080 (or change the [proxy.conf.json](./src/proxy.conf.json)) and run the following commands:
 
 ```bash
-npm install
+npm install --force
 npm run start
 ```
+
+Note: `npm install --force` helps resolve the apparent conflict between rxjs 7 and redux-observable 1, coming transitively from the Flowable Forms dependency.

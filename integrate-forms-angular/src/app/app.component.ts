@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {mergeMap, map} from "rxjs/operators";
+import {HttpClient} from '@angular/common/http';
+import {mergeMap, map} from 'rxjs/operators';
 import {Model} from '@flowable/forms';
-import {combineLatest} from "rxjs";
+import {combineLatest} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -19,26 +19,27 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const options = {
+    const processDefinitionKey = 'integrateForms';
+    const httpOptionsWithUserCredentials = {
       headers: {
         Authorization: 'Basic YWRtaW46dGVzdA=='
       }
     };
-    const processDefinitionIdObservable = this.httpClient.get<any>('/process-api/repository/process-definitions?key=integrateForms&latest=true', options)
-      .pipe(
+    const processDefinitionIdObservable = this.httpClient.get<any>(`/process-api/repository/process-definitions?key=${processDefinitionKey}&latest=true`, httpOptionsWithUserCredentials)
+      .pipe<any>(
         map(result => result.data[0].id)
       );
 
     combineLatest([
-      processDefinitionIdObservable.pipe(
-        mergeMap(processDefinitionId => this.httpClient.get<Model.FormLayout>(`/platform-api/process-definitions/${processDefinitionId}/start-form`, options))
+      processDefinitionIdObservable.pipe<Model.FormLayout>(
+        mergeMap(processDefinitionId => this.httpClient.get<Model.FormLayout>(`/platform-api/process-definitions/${processDefinitionId}/start-form`, httpOptionsWithUserCredentials))
       ),
       processDefinitionIdObservable
     ])
       .subscribe(([formLayout, processDefinitionId]) => {
         formLayout.outcomes = formLayout.outcomes || [{
-          label: "Create new process",
-          value: "__CREATE"
+          label: 'Create new process',
+          value: '__CREATE'
         }];
         this.props = {
           config: formLayout,
@@ -47,12 +48,12 @@ export class AppComponent implements OnInit {
               ...payload,
               outcome: result,
               processDefinitionId
-            }, options)
-              .subscribe(result => {
-                // handle successful creation
+            }, httpOptionsWithUserCredentials)
+              .subscribe(creationResult => {
+                // handle successful creation and store creationResult.id to have the id of the created process
               });
           }
-        }
+        };
       });
   }
 
